@@ -1,0 +1,104 @@
+Manual Tests for Amazon Application:
+
+// Variables for Testing
+$browser: Chrome, Safari, Opera, Edge
+$item: frame, bike, basketball, scissors, flowers
+
+// Repeat Scripts for Reference
+#Login script:
+Step 1: Open $browser and navigate to url 'www.amazon.com'
+    Verify: Page loads
+Step 2: Click the link/button labeled 'Account & Lists' near top right of the page
+    Verify: Sign in page loads
+Step 3: Sign in using an existing account (or follow Test 1 to create new user, then repeat Step 2)
+    Verify: The Amazon homepage loads and your username is displayed in the link/button labeled 'Account & Lists'
+
+#Add $item to cart script:
+Step 1: Input $item name into search bar and press 'Enter'
+    Verify: The search results display the $item options
+Step 2: Click an $item option from the search results below
+    Verify: The specific $item page comes up and displays more information
+Step 3: Click the 'Add to Cart' button on the right hand side
+    Verify: A new page loads that displays a 'Added to Cart' message, the Cart Icon has a '1' next to it (indicating the 1 $item you chose)
+
+
+// Tests
+Test 1: Create New User
+
+Step 1: Open $browser and navigate to url 'www.amazon.com'
+    Verify: Page loads
+Step 2: Click the link/button labeled 'Account & Lists' near top right of the page
+    Verify: Sign in page loads
+Step 3: Click the Create your Amazon account
+    Verify: Create account page loads
+Step 4: Input Name, email, and a password into each field
+    Verify: All fields are successfully entered
+Step 5: Click Create your Amazon account button
+    Verify: The Amazon homepage loads and your username is displayed in the link/button labeled 'Account & Lists'
+
+Test 2: Change Password
+
+Step 1: #Login script
+Step 2: Hover over the 'Account & Lists' label/button
+    Verify: A menu opens with various options
+Step 3: Click 'Your Account'
+    Verify: Your account page loads
+Step 4: Click the box that is labeled 'Login & Security'
+    Verify: Login and security page loads
+Step 5: Click the 'Edit' button in the 'Password' section of the page
+    Verify: Change Password page loads
+Step 6: Input current password and new password twice (once in new, and once in 'reenter new password'), click 'Save changes' button
+    Verify: All fields entered and success page is shown
+
+Test 3: Item Search
+
+Step 1: #Login script
+Step 2: Input $item name into search bar and press 'Enter'
+    Verify: The search results are displayed in a list with pictures, prices, and ratings. 'Refine by' options are available along the side of the screen
+        and a 'Sort by' near the top right
+Step 3: Input a different $item name into the search bar and click the icon that looks like a magnifying glass
+    Verify: The search results change to the new $item
+Step 4: Start inputing part of another $item name, and click on the item in the suggested search options shown below the search bar
+    Verify: The search results change to the new $item
+
+Test 4: Put $item in Your Cart
+
+Step 1: #Login script
+Step 2: #Add $item to cart script
+
+Test 5: View Cart
+
+Step 1: #Login script
+Step 2: #Add $item to cart script
+Step 6: Click the Cart icon or the 'Cart' button
+    Verify: The cart is now shown with the $item listed
+
+Test 6: Cart Item 'Save for Later'
+
+Step 1: #Login script
+Step 2: #Add $item to cart script
+Step 3: Click the Cart icon or the 'Cart' button
+    Verify: The cart is now shown with the $item listed
+Step 4: Click the 'Save for Later' link underneath the item in the cart
+    Verify: The item is removed from the cart and is now listed under 'Saved for later'
+
+Test 7: Proceed to Checkout
+
+Step 1: #Login script
+Step 2: #Add $item to cart script
+Step 3: Click the 'Proceed to checkout' button on the right or in the middle
+    Verify: Checkout page loads
+
+Test 8: Move $item to Wish List
+Step 1: #Login script
+Step 2: #Add $item to cart script
+Step 3: Click the Cart icon or the 'Cart' button
+    Verify: The cart is now shown with the $item listed
+Step 4: Click the 'Save for Later' link underneath the item in the cart
+    Verify: The item is removed from the cart and is now listed under 'Saved for later'
+Step 5: Click the 'Move to Wish List' link next to the $item under 'Saved for later'
+    Verify: 'Move to Wish List' options appear
+Step 6: Click 'Wish List(Public, item)'
+    Verify: $item is no longer listed on under 'Saved for later' and a message appears saying it has been moved to Wish List
+Step 7: Click 'Wish List' link in message
+    Verify: $item is now listed under 'Wish List'
