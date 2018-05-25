@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <servlet>
+        <servlet-name>GetHelloServlet</servlet-name>
+        <servlet-class>servlets.GetHelloServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetGoodbyeServlet</servlet-name>
+        <servlet-class>servlets.GetGoodbyeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetHelloServlet</servlet-name>
+        <url-pattern>/GetHelloServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetGoodbyeServlet</servlet-name>
+        <url-pattern>/GetGoodbyeServlet</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
