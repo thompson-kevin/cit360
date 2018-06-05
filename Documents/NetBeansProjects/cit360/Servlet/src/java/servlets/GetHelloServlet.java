@@ -31,6 +31,7 @@ public class GetHelloServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String name = request.getParameter("name");
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             out.println("<!DOCTYPE html>");
@@ -39,7 +40,7 @@ public class GetHelloServlet extends HttpServlet {
             out.println("<title>Servlet GetHelloServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet says Hello!</h1>");
+            out.println("<h1>" + name + ", Servlet says Hello!</h1>");
             out.println("<form action=\"/Servlet\" method=\"post\">"
                     + "<input type=\"submit\" name=\"back\" value=\"Go Back\"/>"
                     + "</form>");
