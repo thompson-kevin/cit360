@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./template.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns="http://www.w3.org/1999/xhtml">
+
+    <ui:define name="top">
+        Customer Record for Credit
+    </ui:define>
+
+    <ui:define name="body">
+        <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="Email"/>
+                    <h:outputText value="#{customerController.selected.email}" title="Email"/>
+                    <h:outputText value="Address"/>
+                    <h:outputText value="#{customerController.selected.addressline1}" title="Address"/>
+                    <h:outputText value="Address cont."/>
+                    <h:outputText value="#{customerController.selected.addressline2}"/>
+                    <h:outputText value="City"/>
+                    <h:outputText value="#{customerController.selected.city}" title="City"/>
+                    <h:outputText value="State"/>
+                    <h:outputText value="#{customerController.selected.state}" title="State"/>
+                    <h:outputText value="Zip"/>
+                    <h:outputText value="#{customerController.selected.zip}" title="Zip"/>
+                    <h:outputText value="Phone"/>
+                    <h:outputText value="#{customerController.selected.phone}" title="Phone"/>
+                    <h:outputText value="Fax"/>
+                    <h:outputText value="#{customerController.selected.fax}" title="Fax"/>
+                    <h:outputText value="Credit Limit"/>
+                    <h:outputText value="#{customerController.selected.creditLimit}" title="Credit Limit"/>
+                </h:panelGrid>
+                <br/>
+                <br/>
+                <h:commandLink action="#{customerController.prepareList}" value="View All Customers List"/>
+                <br/>
+            </h:form>
+    </ui:define>
+
+</ui:composition>
